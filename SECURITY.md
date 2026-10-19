@@ -12,4 +12,6 @@ Math: fixed simple Bernoulli models; integer exponent/rational ratio; first-boun
 
 Consumers must bind the latest head and inspect status. OPEN is not terminal evidence; CAP_REACHED favors neither model. ABSTAINED and SOURCE_FAILED deny the likelihood interface, while transparent raw history stays readable. Terminal state is absorbing. Permanent consensus failure can leave OPEN indefinitely; no funds/credits are locked and no fictitious default conclusion is issued.
 
+Permissionless timing is also a griefing surface: a willing caller can advance during a temporary source outage, and an agreed acquisition failure permanently stops this run. That is an explicit fail-closed policy, not a resilient availability guarantee. There is no automatic restart or erasure of the failure. New runs remain separately visible and must not be cherry-picked as calibrated experiments.
+
 Keep private text, keys and passwords out of corpora/Git/chat. Public full source snapshots and transcripts are immutable. Signing uses native encrypted wallet/OS vault with no key export. Inspect known hashes before retry; never erase the proof journal to rebroadcast. Disclose vulnerabilities in repository issues without credentials or private data.

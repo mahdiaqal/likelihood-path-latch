@@ -1,0 +1,813 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "signer": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+  "fixture_commit": "b746260b4977ed94b00df93aa1b6408a5dd0c317",
+  "transactions": [
+    {
+      "step": "deploy",
+      "verified": true,
+      "cli_arguments": [
+        "deploy",
+        "--contract",
+        "contracts/LikelihoodPathLatch.py"
+      ],
+      "hash": "0x01d87d36a7be005a6a5707f333d3213ddb7eb1784a3d715243ae5238dd6d304a",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "create-upper-v1",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "create_test",
+        "--args",
+        "upper-v1",
+        "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/upper.json",
+        "8bb15cbae040f3b153cc1d56ab954021d7611419a9243c525c5bde6735ff4668"
+      ],
+      "hash": "0xe38d280dbc231249602d9a2c0ce4363f43476d95cce109c2fa4513a73b5ccf59",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "skip-upper",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9242338eb1d11dbc969ce5e1238feef5710f3f4b7d03d51b1de97ff8e8da9477",
+        "1"
+      ],
+      "hash": "0x73093ec88503e0b20c769fa23a74515b11fedd46924bdd8802bb4852c5013ca9",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true,
+      "committed": false
+    },
+    {
+      "step": "upper-step-0",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9242338eb1d11dbc969ce5e1238feef5710f3f4b7d03d51b1de97ff8e8da9477",
+        "0"
+      ],
+      "hash": "0x6093c181879584bbe0a194c2c5d7f4fc42d71e7208de545eb64124a67caed9d7",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "replay-upper-cursor",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9242338eb1d11dbc969ce5e1238feef5710f3f4b7d03d51b1de97ff8e8da9477",
+        "0"
+      ],
+      "hash": "0x27f2aa13c28f087d9ab26e2725fc78f46569eb49bc16d9c5349dd7ec8c4c3665",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true,
+      "committed": false
+    },
+    {
+      "step": "upper-step-1",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9242338eb1d11dbc969ce5e1238feef5710f3f4b7d03d51b1de97ff8e8da9477",
+        "1"
+      ],
+      "hash": "0x4e1762d19e2da255c2c0177377ab2b9e967ee67f3243372557a775617949de0a",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "upper-step-2",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9242338eb1d11dbc969ce5e1238feef5710f3f4b7d03d51b1de97ff8e8da9477",
+        "2"
+      ],
+      "hash": "0x1002193a8a8db5d4d0e68f2b7ea15b10c8d0b1342a51d2d823277ae6ef6248e8",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "advance-terminal",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9242338eb1d11dbc969ce5e1238feef5710f3f4b7d03d51b1de97ff8e8da9477",
+        "3"
+      ],
+      "prebroadcast_recovery": {
+        "prior_attempt_no_hash": true,
+        "history_only_known_finalized": true,
+        "history_hashes": [
+          "0x1002193a8a8db5d4d0e68f2b7ea15b10c8d0b1342a51d2d823277ae6ef6248e8",
+          "0x4e1762d19e2da255c2c0177377ab2b9e967ee67f3243372557a775617949de0a",
+          "0x27f2aa13c28f087d9ab26e2725fc78f46569eb49bc16d9c5349dd7ec8c4c3665",
+          "0x6093c181879584bbe0a194c2c5d7f4fc42d71e7208de545eb64124a67caed9d7",
+          "0x73093ec88503e0b20c769fa23a74515b11fedd46924bdd8802bb4852c5013ca9",
+          "0xe38d280dbc231249602d9a2c0ce4363f43476d95cce109c2fa4513a73b5ccf59",
+          "0x01d87d36a7be005a6a5707f333d3213ddb7eb1784a3d715243ae5238dd6d304a"
+        ],
+        "latest_nonce": "0x11b",
+        "pending_nonce": "0x11b",
+        "terminal_state": "UPPER_CROSSED"
+      },
+      "retry_after_history_audit": false,
+      "hash": "0x75b9b938017cfb616ec0842ba8dcad01b0135b4977cb33bdb2dc8e36dc52443b",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "consensus": "MAJORITY_AGREE",
+      "expected_error_matched": true,
+      "committed": false
+    },
+    {
+      "step": "create-lower-v1",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "create_test",
+        "--args",
+        "lower-v1",
+        "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/lower.json",
+        "94a4a41c524628d437b59a171d0287bf2891e9d0b9a174c7a2eede996306a508"
+      ],
+      "hash": "0x7345cfcd7df5d5c4a53d1bc120d649f0512d9849b1e6b27f75007b6939dce1b9",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "lower-step-0",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "d5309d6d645571ba786bf503431ce3d2b01327de66896be32437d46c7eaeb207",
+        "0"
+      ],
+      "hash": "0x9af90a0f312c4b913e3eddcd5b7c71c1f29d8030c062bab8bf4bfa12d2ce6bf9",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "lower-step-1",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "d5309d6d645571ba786bf503431ce3d2b01327de66896be32437d46c7eaeb207",
+        "1"
+      ],
+      "hash": "0x6cb479b22017b18ea8372099b0ea8366118644dd9405160d86cf1dadcf9c4561",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "lower-step-2",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "d5309d6d645571ba786bf503431ce3d2b01327de66896be32437d46c7eaeb207",
+        "2"
+      ],
+      "hash": "0x6bbe0f260173cd74dc4f1c7de827e5a7459724ffb738bfc6a9660cb18a065eab",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "create-cap-v1",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "create_test",
+        "--args",
+        "cap-v1",
+        "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/cap.json",
+        "c2a5d41319ab1b0985471307f62809e9efb096380a3ffdb21c204290fdb45122"
+      ],
+      "hash": "0x0f9445af1aa4e04e2763366542283dd45f90cf85e91da9ff0f69d305d300dea1",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "cap-step-0",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9676ebcb248157f29b7dc8ffbaeca069f56003589971fc711061bc59c6d6b9d0",
+        "0"
+      ],
+      "hash": "0x5d091591eb42764fa4a091e7ffe7032198283542dee655c3f1e1d6107a4cb0f6",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "cap-step-1",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9676ebcb248157f29b7dc8ffbaeca069f56003589971fc711061bc59c6d6b9d0",
+        "1"
+      ],
+      "hash": "0xd9f21a9df0c403bdbe287cd4ff294afa9d394e691211016e40de06c0532a5cbc",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "create-bad-v1",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "create_test",
+        "--args",
+        "bad-v1",
+        "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/upper.json",
+        "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+      ],
+      "hash": "0x2730b6b3948baead8d892c1a708bc0dac750c7a4666d26f01c296936f733e0e9",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    },
+    {
+      "step": "bad-source",
+      "verified": true,
+      "cli_arguments": [
+        "write",
+        "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "advance",
+        "--args",
+        "9b833d4522b2faa3f677a77aa9a3cf78768084648586b9fd4c265b393d4cd103",
+        "0"
+      ],
+      "hash": "0xea858aeb97b898df26dbf7ea3d6199162e020ea7fa900443853997cc816df8c8",
+      "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+      "status": "FINALIZED",
+      "execution": "SUCCESS",
+      "consensus": "MAJORITY_AGREE",
+      "committed": true
+    }
+  ],
+  "runs": {
+    "upper": {
+      "key": "9242338eb1d11dbc969ce5e1238feef5710f3f4b7d03d51b1de97ff8e8da9477",
+      "inputs": {
+        "boundaries": [
+          -3,
+          3
+        ],
+        "contract": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "creator": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+        "model": "bernoulli-1of4-vs-3of4",
+        "nonce": "upper-v1",
+        "policy": "likelihood-path-latch-v1",
+        "predicate": "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "source": {
+          "sha256": "8bb15cbae040f3b153cc1d56ab954021d7611419a9243c525c5bde6735ff4668",
+          "url": "https://raw.githubusercontent.com/mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/upper.json"
+        }
+      },
+      "input_root": "801a18ae4bb828c88d5f4d6e0647646e5040e2bcd169090b73ce012a0c42f1ee",
+      "head": "874f084d7cd99552cc2b08eb8201fb72a0a304c5ae2af4c35f465835bddef0cb",
+      "state": {
+        "cursor": 3,
+        "total": 5,
+        "matches": 3,
+        "nonmatches": 0,
+        "unknowns": 0,
+        "exponent": 3,
+        "status": "UPPER_CROSSED",
+        "steps": 3
+      },
+      "ratio": {
+        "numerator": 27,
+        "denominator": 1,
+        "model_only": true,
+        "p0": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "p1": {
+          "numerator": 3,
+          "denominator": 4
+        }
+      },
+      "steps": [
+        {
+          "index": 0,
+          "root": "bb45bb788e8d4c255fa2f22d35310db47db94a589905662f5dec12e8006aab83",
+          "source_status": "OK",
+          "item_id": "a",
+          "label": "MATCH",
+          "state": {
+            "cursor": 1,
+            "total": 5,
+            "matches": 1,
+            "nonmatches": 0,
+            "unknowns": 0,
+            "exponent": 1,
+            "status": "OPEN",
+            "steps": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "model_only": true,
+            "numerator": 3,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        },
+        {
+          "index": 1,
+          "root": "95b7b9feadf9a2a770d3c5feb0e5ef1aae754f924b9e5ffa6730f4f056a2d104",
+          "source_status": "OK",
+          "item_id": "b",
+          "label": "MATCH",
+          "state": {
+            "cursor": 2,
+            "total": 5,
+            "matches": 2,
+            "nonmatches": 0,
+            "unknowns": 0,
+            "exponent": 2,
+            "status": "OPEN",
+            "steps": 2
+          },
+          "ratio": {
+            "denominator": 1,
+            "model_only": true,
+            "numerator": 9,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        },
+        {
+          "index": 2,
+          "root": "874f084d7cd99552cc2b08eb8201fb72a0a304c5ae2af4c35f465835bddef0cb",
+          "source_status": "OK",
+          "item_id": "c",
+          "label": "MATCH",
+          "state": {
+            "cursor": 3,
+            "total": 5,
+            "matches": 3,
+            "nonmatches": 0,
+            "unknowns": 0,
+            "exponent": 3,
+            "status": "UPPER_CROSSED",
+            "steps": 3
+          },
+          "ratio": {
+            "denominator": 1,
+            "model_only": true,
+            "numerator": 27,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        }
+      ],
+      "verified": true
+    },
+    "lower": {
+      "key": "d5309d6d645571ba786bf503431ce3d2b01327de66896be32437d46c7eaeb207",
+      "inputs": {
+        "boundaries": [
+          -3,
+          3
+        ],
+        "contract": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "creator": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+        "model": "bernoulli-1of4-vs-3of4",
+        "nonce": "lower-v1",
+        "policy": "likelihood-path-latch-v1",
+        "predicate": "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "source": {
+          "sha256": "94a4a41c524628d437b59a171d0287bf2891e9d0b9a174c7a2eede996306a508",
+          "url": "https://raw.githubusercontent.com/mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/lower.json"
+        }
+      },
+      "input_root": "af07b339667b530b384bb40cc80bca3daaa77a49a1de52ce7fc8393fe86dacb6",
+      "head": "6767f050f4df377fa5dd909409b0fef4f54ad48ea5d1fa18934de182300188f5",
+      "state": {
+        "cursor": 3,
+        "total": 4,
+        "matches": 0,
+        "nonmatches": 3,
+        "unknowns": 0,
+        "exponent": -3,
+        "status": "LOWER_CROSSED",
+        "steps": 3
+      },
+      "ratio": {
+        "numerator": 1,
+        "denominator": 27,
+        "model_only": true,
+        "p0": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "p1": {
+          "numerator": 3,
+          "denominator": 4
+        }
+      },
+      "steps": [
+        {
+          "index": 0,
+          "root": "c761e06e6ee2610f0e3a4e40435a7b106d66bf3db44c4bfee49451846eb35d1b",
+          "source_status": "OK",
+          "item_id": "a",
+          "label": "NO_MATCH",
+          "state": {
+            "cursor": 1,
+            "total": 4,
+            "matches": 0,
+            "nonmatches": 1,
+            "unknowns": 0,
+            "exponent": -1,
+            "status": "OPEN",
+            "steps": 1
+          },
+          "ratio": {
+            "denominator": 3,
+            "model_only": true,
+            "numerator": 1,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        },
+        {
+          "index": 1,
+          "root": "b72e61c1058aff9476555bf79746d0ff8a2122e6f915371b0b7fa8459431bce6",
+          "source_status": "OK",
+          "item_id": "b",
+          "label": "NO_MATCH",
+          "state": {
+            "cursor": 2,
+            "total": 4,
+            "matches": 0,
+            "nonmatches": 2,
+            "unknowns": 0,
+            "exponent": -2,
+            "status": "OPEN",
+            "steps": 2
+          },
+          "ratio": {
+            "denominator": 9,
+            "model_only": true,
+            "numerator": 1,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        },
+        {
+          "index": 2,
+          "root": "6767f050f4df377fa5dd909409b0fef4f54ad48ea5d1fa18934de182300188f5",
+          "source_status": "OK",
+          "item_id": "c",
+          "label": "NO_MATCH",
+          "state": {
+            "cursor": 3,
+            "total": 4,
+            "matches": 0,
+            "nonmatches": 3,
+            "unknowns": 0,
+            "exponent": -3,
+            "status": "LOWER_CROSSED",
+            "steps": 3
+          },
+          "ratio": {
+            "denominator": 27,
+            "model_only": true,
+            "numerator": 1,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        }
+      ],
+      "verified": true
+    },
+    "cap": {
+      "key": "9676ebcb248157f29b7dc8ffbaeca069f56003589971fc711061bc59c6d6b9d0",
+      "inputs": {
+        "boundaries": [
+          -3,
+          3
+        ],
+        "contract": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "creator": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+        "model": "bernoulli-1of4-vs-3of4",
+        "nonce": "cap-v1",
+        "policy": "likelihood-path-latch-v1",
+        "predicate": "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "source": {
+          "sha256": "c2a5d41319ab1b0985471307f62809e9efb096380a3ffdb21c204290fdb45122",
+          "url": "https://raw.githubusercontent.com/mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/cap.json"
+        }
+      },
+      "input_root": "63112ccb6eb277293cf7d17c404cb1509565a6954976e51a256bdf8371871d0f",
+      "head": "593267914065c36fb5fca0f7514eeec36390045dfba5ff6c44f92be8d28e09ed",
+      "state": {
+        "cursor": 2,
+        "total": 2,
+        "matches": 1,
+        "nonmatches": 1,
+        "unknowns": 0,
+        "exponent": 0,
+        "status": "CAP_REACHED",
+        "steps": 2
+      },
+      "ratio": {
+        "numerator": 1,
+        "denominator": 1,
+        "model_only": true,
+        "p0": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "p1": {
+          "numerator": 3,
+          "denominator": 4
+        }
+      },
+      "steps": [
+        {
+          "index": 0,
+          "root": "96f71fdc82b534251d0e4c6825a6a79b3f48e844f79e0d5d282ed436f786512a",
+          "source_status": "OK",
+          "item_id": "a",
+          "label": "MATCH",
+          "state": {
+            "cursor": 1,
+            "total": 2,
+            "matches": 1,
+            "nonmatches": 0,
+            "unknowns": 0,
+            "exponent": 1,
+            "status": "OPEN",
+            "steps": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "model_only": true,
+            "numerator": 3,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        },
+        {
+          "index": 1,
+          "root": "593267914065c36fb5fca0f7514eeec36390045dfba5ff6c44f92be8d28e09ed",
+          "source_status": "OK",
+          "item_id": "b",
+          "label": "NO_MATCH",
+          "state": {
+            "cursor": 2,
+            "total": 2,
+            "matches": 1,
+            "nonmatches": 1,
+            "unknowns": 0,
+            "exponent": 0,
+            "status": "CAP_REACHED",
+            "steps": 2
+          },
+          "ratio": {
+            "denominator": 1,
+            "model_only": true,
+            "numerator": 1,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        }
+      ],
+      "verified": true
+    },
+    "bad": {
+      "key": "9b833d4522b2faa3f677a77aa9a3cf78768084648586b9fd4c265b393d4cd103",
+      "inputs": {
+        "boundaries": [
+          -3,
+          3
+        ],
+        "contract": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+        "creator": "0x7a413BB4AB62E31d62d4cD9efC8C8a8Dae37FB42",
+        "model": "bernoulli-1of4-vs-3of4",
+        "nonce": "bad-v1",
+        "policy": "likelihood-path-latch-v1",
+        "predicate": "The message asks its recipient to disclose a password, private key or recovery phrase to another person.",
+        "source": {
+          "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "url": "https://raw.githubusercontent.com/mahdiaqal/likelihood-path-latch/b746260b4977ed94b00df93aa1b6408a5dd0c317/examples/upper.json"
+        }
+      },
+      "input_root": "fef833960280818abf3be94b61da665cbd416d88df88eb22158e1f0dcc294421",
+      "head": "a2735e4d8000d01b1683473c8bc980982b9369ba1d6056232de30a3fcad7064f",
+      "state": {
+        "cursor": 0,
+        "total": 0,
+        "matches": 0,
+        "nonmatches": 0,
+        "unknowns": 0,
+        "exponent": 0,
+        "status": "SOURCE_FAILED",
+        "steps": 1
+      },
+      "ratio": {
+        "numerator": 1,
+        "denominator": 1,
+        "model_only": true,
+        "p0": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "p1": {
+          "numerator": 3,
+          "denominator": 4
+        }
+      },
+      "steps": [
+        {
+          "index": 0,
+          "root": "a2735e4d8000d01b1683473c8bc980982b9369ba1d6056232de30a3fcad7064f",
+          "source_status": "HASH_MISMATCH",
+          "item_id": null,
+          "label": "UNKNOWN",
+          "state": {
+            "cursor": 0,
+            "total": 0,
+            "matches": 0,
+            "nonmatches": 0,
+            "unknowns": 0,
+            "exponent": 0,
+            "status": "SOURCE_FAILED",
+            "steps": 1
+          },
+          "ratio": {
+            "denominator": 1,
+            "model_only": true,
+            "numerator": 1,
+            "p0": {
+              "denominator": 4,
+              "numerator": 1
+            },
+            "p1": {
+              "denominator": 4,
+              "numerator": 3
+            }
+          }
+        }
+      ],
+      "verified": true
+    }
+  },
+  "final_readback_verified": true,
+  "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+  "source": {
+    "address": "0xE23091bb29d1B0a71d51c347084733fDd909cbBc",
+    "source_match": true,
+    "sha256": "de16c0ba4cf1b52132975871ceff178ea1fd624de0a5cdcc48f06dd39ae481b5"
+  },
+  "wrong_head_consumer_denied": true,
+  "expected_outcomes_matched": {
+    "upper": true,
+    "lower": true,
+    "cap": true,
+    "bad": true
+  }
+}

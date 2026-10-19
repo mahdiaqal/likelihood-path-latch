@@ -19,6 +19,10 @@ function broadcast(args,onHash){return new Promise((resolve,reject)=>{
 });}
 async function tx(step,args,expected='SUCCESS',message){
  let entry=proofs.transactions.find(x=>x.step===step);
+ if(entry&&!entry.hash&&entry.retry_after_history_audit===true){
+  entry.retry_after_history_audit=false;entry.broadcast_unknown=true;save();
+  await broadcast(args,hash=>{entry.hash=hash;delete entry.broadcast_unknown;save();console.log(step+' '+hash);});
+ }
  if(!entry){entry={step,verified:false,broadcast_unknown:true,cli_arguments:args};proofs.transactions.push(entry);save();
   await broadcast(args,hash=>{entry.hash=hash;delete entry.broadcast_unknown;save();console.log(step+' '+hash);});}
  if(!entry.hash)throw Error('Unknown broadcast outcome; inspect signer history');
@@ -67,5 +71,6 @@ try{
  }
  if(proofs.transactions.some(t=>!t.verified||t.broadcast_unknown))throw Error('Unverified transaction remains');
  proofs.source=await source(proofs.address);proofs.final_readback_verified=true;save();
+ proofs.expected_outcomes_matched={upper:proofs.runs.upper.state.status==='UPPER_CROSSED',lower:proofs.runs.lower.state.status==='LOWER_CROSSED',cap:proofs.runs.cap.state.status==='CAP_REACHED',bad:proofs.runs.bad.state.status==='SOURCE_FAILED'};save();
  console.log(JSON.stringify({complete:true,address:proofs.address,outcomes:Object.fromEntries(Object.entries(proofs.runs).map(([k,v])=>[k,v.state.status]))}));
 }catch{console.error('Sanitized proof workflow stopped; inspect recorded hashes/state before retry');process.exitCode=1;}

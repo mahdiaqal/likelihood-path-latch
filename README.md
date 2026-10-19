@@ -114,4 +114,12 @@ Use an encrypted native test signer, never exported keys. StudioNet is gasless (
 
 Publish the fixture commit first. `scripts/complete-proofs.mjs FULL_FIXTURE_COMMIT` executes only the documented demo and journals each hash immediately. Set `LATCH_TEST_ACCOUNT` and optionally `LATCH_CLI_PATH`; its default CLI path is a local workspace convenience. It suppresses unsafe raw receipts, caches identical signed broadcasts and will not blindly resend a recorded or uncertain step. A workflow stop requires receipt/history inspection, not deletion of PROOFS.json. Read-only rechecks: `node scripts/check.mjs source CONTRACT` and `node scripts/check.mjs state CONTRACT RUN_KEY`. The checker independently reconstructs each full source hash, selected row, transcript chain, state transition, rational product and consumer output.
 
-Verify source and execution in [Studio Explorer](https://explorer-studio.genlayer.com/). FINALIZED alone is not success: execution ERROR and MAJORITY_DISAGREE are negative/no-commit outcomes. Deployment and live outcomes remain unverified until recorded in LIVE_PROOFS.md.
+Verify source and execution in [Studio Explorer](https://explorer-studio.genlayer.com/). FINALIZED alone is not success: execution ERROR and MAJORITY_DISAGREE are negative/no-commit outcomes.
+
+## Verified experimental deployment
+
+[StudioNet contract](https://explorer-studio.genlayer.com/address/0xE23091bb29d1B0a71d51c347084733fDd909cbBc): `0xE23091bb29d1B0a71d51c347084733fDd909cbBc`. Retrieved deployed source matches the repository contract. [17-transaction proof matrix](LIVE_PROOFS.md), [machine-readable journal](PROOFS.json), [ready-to-fill submission](SUBMISSION.md).
+
+Actual outcomes: UPPER_CROSSED at 27/1 after 3/5 rows; LOWER_CROSSED at 1/27 after 3/4; CAP_REACHED at 1/1 after 2/2; bad commitment → SOURCE_FAILED without a counted trial. Skipped/replayed cursors and post-terminal advancement reverted. All final history roots and root-bound consumers were rechecked. Fourteen successful executions and three expected errors finalized with agreement. One no-hash local transport attempt was reconciled against history/nonces before a guarded retry; it is disclosed and not counted as an extra proof.
+
+Validation passed: 45 Python tests, 2 JavaScript tests, 5 SDK checks, GenVM lint and SDK contract validation. Each optimizer-free rational suite checks all 65,536 binary length-16 paths. Semantic abstention and validator disagreement have local tests, not live-chain demonstrations in this ledger. Statistical calibration, model accuracy and production readiness remain unproven.
